@@ -41,7 +41,7 @@ export default function TicketList() {
     };
 
     return (
-        <Box sx={{ p: { xs: 1, sm: 2, md: 3 }, maxWidth: 1200, mx: 'auto' }}>
+        <Box sx={{ p: { xs: 1, sm: 2, md: 3 }, maxWidth: 900, mx: 'auto' }}>
             <Typography variant="h4" gutterBottom fontSize={{ xs: 22, sm: 28, md: 32 }}>
                 Support Ticket Dashboard
             </Typography>

@@ -155,7 +155,7 @@ export const TicketList = () => {
   ];
 
   return (
-    <Box sx={{ height: '100%', width: '100%', maxWidth: 1200, mx: 'auto', p: 2 }}>
+    <Box sx={{ height: '100%', width: '100%', maxWidth: 1190, mx: 'auto', p: 1 }}>
       <Typography variant="h4" gutterBottom>
         Support Ticket Dashboard
       </Typography>
