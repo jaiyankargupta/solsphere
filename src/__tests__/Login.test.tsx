@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/dom';
 import { BrowserRouter } from 'react-router-dom';
 import Login from '../pages/Login';
 import { AuthProvider } from '../context/AuthContext';

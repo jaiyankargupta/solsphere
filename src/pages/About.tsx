@@ -1,7 +1,8 @@
-import { Box, Typography, Grid, Paper, Button } from '@mui/material';
+import { Box, Typography, Paper, Button } from '@mui/material';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Link as RouterLink } from 'react-router-dom';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const leaders = [
   {
@@ -40,9 +41,9 @@ export default function About() {
         <Typography variant="h4" fontWeight={700} gutterBottom>
           Leadership Team
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center">
           {leaders.map((l) => (
-            <Grid item xs={12} md={4} key={l.name} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid xs={12} md={4} key={l.name} sx={{ display: 'flex', justifyContent: 'center' }}>
               <Paper elevation={2} sx={{ p: 3, minHeight: 220, width: 1, maxWidth: 350, mx: 'auto' }}>
                 <img src={l.img} alt={l.name} style={{ width: 100, height: 100, borderRadius: '50%', objectFit: 'cover', marginBottom: 16 }} />
                 <Typography variant="h6" fontWeight={700} gutterBottom>{l.name}</Typography>

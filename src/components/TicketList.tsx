@@ -22,7 +22,6 @@ import type { GridColDef } from '@mui/x-data-grid';
 import { format } from 'date-fns';
 import type { Ticket, TicketStatus, TicketPriority } from '../types/ticket';
 import { mockTickets } from '../mocks/tickets';
-import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const statusColors = {
@@ -86,7 +85,7 @@ export const TicketList = () => {
             fontWeight: 'bold',
             py: 0,
             my: 0,
-            pt: 3,
+            pt: 0,
             lineHeight: 1.2,
             fontSize: 15,
             display: 'flex',
@@ -103,7 +102,7 @@ export const TicketList = () => {
       width: 160,
       cellClassName: 'cell-padding',
       renderCell: (params) => (
-        <FormControl size="small" fullWidth sx={{ my: 0, py: 0, pt: 2, justifyContent: 'center', height: '32px' }}>
+        <FormControl size="small" fullWidth sx={{ my: 0, py: 0, pt: 0, justifyContent: 'center', height: '32px' }}>
           <Select
             value={params.row.status}
             onChange={e => handleStatusChange(params.row.id, e.target.value as TicketStatus)}
@@ -200,13 +199,9 @@ export const TicketList = () => {
         <DataGrid
           rows={filteredTickets}
           columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: { pageSize: 5, page: 0 },
-            },
-          }}
-          pageSizeOptions={[5]}
-          disableRowSelectionOnClick
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          disableSelectionOnClick
           density="comfortable"
           sx={{ '& .cell-padding': { padding: '0 8px' }, '& .actions-cell': { paddingLeft: '0' } }}
         />

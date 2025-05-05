@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Paper } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 
@@ -42,9 +42,9 @@ export default function Home() {
         <Typography variant="h6" color="text.secondary" align="center" maxWidth={900} mx="auto" mb={4}>
           Our product aims to redefine the entire GRC experience by making the process seamless, intuitive, and efficient. It will ensure businesses thrive in a world where risk management is proactive, compliance is a part of the company DNA, and audit is no longer a drain on resources.
         </Typography>
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
           {features.map((f) => (
-            <Grid item xs={12} sm={8} md={5} key={f.title} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid xs={12} sm={8} md={5} key={f.title} sx={{ display: 'flex', justifyContent: 'center' }}>
               <Paper elevation={2} sx={{
                 p: { xs: 2, sm: 3 },
                 border: '1px solid #e0e0e0',

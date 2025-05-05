@@ -1,5 +1,5 @@
 import { Box, Typography, Paper, TextField, Button, useMediaQuery } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { useTheme } from '@mui/material/styles';
@@ -20,31 +20,26 @@ export default function Contact() {
         </Typography>
       </Box>
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: { xs: 1, sm: 2, md: 4 }, py: { xs: 4, md: 8 } }}>
-        <Grid
-          container
-          spacing={{ xs: 4, md: 6 }}
-          alignItems={isMdUp ? 'center' : 'flex-start'}
-          justifyContent="center"
-        >
-          <Grid item xs={12} md={7} sx={{ width: '100%', maxWidth: { md: 600 } }}>
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems={isMdUp ? 'center' : 'flex-start'} justifyContent="center">
+          <Grid xs={12} md={7} sx={{ width: '100%', maxWidth: { md: 600 } }}>
             <Paper elevation={2} sx={{ p: { xs: 2, sm: 4 }, width: '100%' }}>
               <Typography variant="h5" fontWeight={700} gutterBottom>
                 Let's Connect and Collaborate
               </Typography>
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid xs={12} md={6}>
                   <TextField label="Name*" fullWidth variant="outlined" margin="dense" />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid xs={12} md={6}>
                   <TextField label="Email*" fullWidth variant="outlined" margin="dense" />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid xs={12} md={6}>
                   <TextField label="Company Name*" fullWidth variant="outlined" margin="dense" />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid xs={12} md={6}>
                   <TextField label="Your Role*" fullWidth variant="outlined" margin="dense" />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <TextField 
                     label="Message*" 
                     fullWidth 

@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/dom';
 import { BrowserRouter } from 'react-router-dom';
 import TicketList from '../pages/TicketList';
 import { AuthProvider } from '../context/AuthContext';
@@ -6,9 +7,9 @@ import { describe, it, expect, vi } from 'vitest';
 
 // Mock the DataGrid component
 vi.mock('@mui/x-data-grid', () => ({
-    DataGrid: ({ rows, columns, onRowClick }) => (
+    DataGrid: ({ rows, onRowClick }: { rows: any[]; onRowClick: any }) => (
         <div data-testid="mock-data-grid">
-            {rows.map((row) => (
+            {rows.map((row: any) => (
                 <div key={row.id} data-testid={`ticket-${row.id}`}>
                     <div>{row.id}</div>
                     <div>{row.title}</div>
@@ -25,29 +26,6 @@ vi.mock('@mui/x-data-grid', () => ({
         </div>
     )
 }));
-
-const mockTickets = [
-    {
-        id: 'TICKET-001',
-        title: 'Cannot access dashboard',
-        description: 'Unable to login to the dashboard',
-        status: 'Open',
-        priority: 'High',
-        createdAt: '2024-03-20T10:00:00Z',
-        updatedAt: '2024-03-20T10:00:00Z',
-        createdBy: 'John Doe'
-    },
-    {
-        id: 'TICKET-002',
-        title: 'API error in production',
-        description: 'Getting 500 errors from the API',
-        status: 'In Progress',
-        priority: 'Medium',
-        createdAt: '2024-03-19T15:30:00Z',
-        updatedAt: '2024-03-20T09:00:00Z',
-        createdBy: 'Jane Smith'
-    }
-];
 
 const renderTicketList = () => {
     return render(
@@ -77,7 +55,7 @@ describe('TicketList', () => {
         fireEvent.mouseDown(statusSelect);
         // Find the dropdown option for 'Open'
         const openOptions = screen.getAllByText('Open');
-        const openOption = openOptions.find(opt => opt.tagName === 'LI');
+        const openOption = openOptions.find((opt: HTMLElement) => opt.tagName === 'LI');
         fireEvent.click(openOption!);
 
         expect(screen.getByTestId('ticket-TICKET-001')).toBeInTheDocument();
@@ -94,7 +72,7 @@ describe('TicketList', () => {
         fireEvent.mouseDown(statusSelect);
         // Find the dropdown option for 'In Progress'
         const inProgressOptions = screen.getAllByText('In Progress');
-        const inProgressOption = inProgressOptions.find(opt => opt.tagName === 'LI');
+        const inProgressOption = inProgressOptions.find((opt: HTMLElement) => opt.tagName === 'LI');
         fireEvent.click(inProgressOption!);
 
         expect(screen.getByTestId('status-button-TICKET-001')).toHaveTextContent('In Progress');

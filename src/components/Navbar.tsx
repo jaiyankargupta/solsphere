@@ -23,7 +23,7 @@ export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const open = Boolean(anchorEl);
   const profileOpen = Boolean(profileAnchor);
-  const { user, isAdmin, logout } = useAuth();
+  const { user, isAdmin } = useAuth();
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));

@@ -10,6 +10,8 @@ export default function TicketList() {
     const [tickets, setTickets] = useState(mockTickets);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
     // Responsive columns
     const columns = [
@@ -17,6 +19,7 @@ export default function TicketList() {
         { field: 'title', headerName: 'Title', minWidth: 180, flex: 2 },
         { field: 'status', headerName: 'Status', minWidth: 120, flex: 1 },
         { field: 'priority', headerName: 'Priority', minWidth: 120, flex: 1 },
+        // Hide on mobile, show on tablet/desktop
         { field: 'createdBy', headerName: 'Created By', minWidth: 140, flex: 1, hide: isMobile },
         { field: 'createdAt', headerName: 'Created At', minWidth: 160, flex: 1, hide: isMobile },
     ];
@@ -29,7 +32,7 @@ export default function TicketList() {
         return matchesSearch && matchesStatus && matchesPriority;
     });
 
-    const handleRowClick = (params) => {
+    const handleRowClick = (params: any) => {
         const { row } = params;
         const newStatus = row.status === 'Open' ? 'In Progress' : 'Open';
         setTickets(tickets.map(ticket => 
@@ -89,7 +92,7 @@ export default function TicketList() {
                     columns={columns}
                     onRowClick={handleRowClick}
                     autoHeight
-                    disableRowSelectionOnClick
+                    disableSelectionOnClick
                     sx={{
                         minWidth: 600,
                         fontSize: { xs: 12, sm: 14, md: 16 },
@@ -103,6 +106,15 @@ export default function TicketList() {
                             minWidth: { xs: 36, sm: 40 },
                             minHeight: { xs: 36, sm: 40 },
                         },
+                        // Desktop/tablet enhancements
+                        ...(isDesktop && {
+                            fontSize: 16,
+                            '& .MuiDataGrid-columnHeaders': { fontSize: 17 },
+                        }),
+                        ...(isTablet && {
+                            fontSize: 14,
+                            '& .MuiDataGrid-columnHeaders': { fontSize: 15 },
+                        }),
                     }}
                 />
             </Box>
