@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
+# Solsphere Support Ticket Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive support ticket management dashboard for customer support teams, built with React, TypeScript, Vite, and Material-UI.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Admin-only dashboard**: Only authorized users (admin emails) can access the dashboard.
+- **Responsive design**: Works beautifully on desktop, tablet, and mobile.
+- **Ticket list with filtering/search**: Quickly find tickets by status, priority, or search term.
+- **Inline status updates**: Change ticket status directly from the dashboard.
+- **Detailed ticket view**: Click a ticket to see all details in a modal.
+- **Authentication**: Login/logout flow with email validation.
+- **Modern UI**: Clean, accessible, and user-friendly interface.
+- **Testing**: Core features are covered by automated tests.
 
-## Expanding the ESLint configuration
+## 📸 Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> _Add screenshots here if you wish!_
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/jaiyankargupta/solsphere_Assignment.git
+   cd solsphere_Assignment
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+   The app will be available at [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **Run tests:**
+   ```sh
+   npm test
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 💡 How This Website Works
+
+- **Login:** Only users with an `@solsphere.ai` email can log in as admin. Others can browse public pages.
+- **Dashboard:**
+  - Admins see the Support Ticket Dashboard link in the navbar.
+  - The dashboard displays all tickets in a table with columns for ID, title, status, priority, etc.
+  - Use the search bar and dropdowns to filter tickets by status, priority, or search term.
+  - Click a ticket row to view details in a modal.
+  - Change ticket status inline using the dropdown; updates are reflected instantly.
+- **Responsive UI:**
+  - On mobile, filters stack vertically and less important columns are hidden for clarity.
+  - The navbar collapses into a hamburger menu on small screens.
+
+## 🧑‍💻 Tech Stack
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Material-UI (MUI)](https://mui.com/)
+- [React Router](https://reactrouter.com/)
+- [Vitest](https://vitest.dev/) & [Testing Library](https://testing-library.com/)
+
+## 🧪 Testing
+- Run all tests:
+  ```sh
+  npm test
+  ```
+- Tests cover authentication, ticket filtering, and status updates.
+
+## 📂 Project Structure
+- `src/components/` — Navbar, TicketList, and other UI components
+- `src/pages/` — Page components (Dashboard, Login, Home, etc.)
+- `src/context/` — Auth context
+- `src/mocks/` — Mock ticket data
+- `src/__tests__/` — Automated tests
+
+---
+
+Feel free to fork, contribute, or use this as a starting point for your own support dashboard!
