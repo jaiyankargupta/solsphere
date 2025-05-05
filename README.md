@@ -13,9 +13,6 @@ A modern, responsive support ticket management dashboard for customer support te
 - **Modern UI**: Clean, accessible, and user-friendly interface.
 - **Testing**: Core features are covered by automated tests.
 
-## 📸 Screenshots
-
-> _Add screenshots here if you wish!_
 
 ## 🛠️ Getting Started
 
