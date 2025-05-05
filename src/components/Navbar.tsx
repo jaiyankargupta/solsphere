@@ -48,7 +48,7 @@ export const Navbar = () => {
         <RouterLink to="/">
           <img src="/logo.png" alt="Solsphere Logo" style={{ height: 36, marginRight: 8 }} />
         </RouterLink>
-        <Typography variant="h6" fontWeight={700} color="#222">Solsphere</Typography>
+        
       </Box>
       <Divider />
       <List>
