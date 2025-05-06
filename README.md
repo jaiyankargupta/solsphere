@@ -1,6 +1,50 @@
 # Solsphere Support Ticket Dashboard
 
-A modern, responsive support ticket management dashboard for customer support teams, built with React, TypeScript, Vite, and Material-UI.
+A modern, responsive support ticket dashboard built with React, Vite, TypeScript, and Material-UI (MUI).
+
+## Folder Structure
+
+```
+/ (root)
+├── public/           # Static assets (favicon, logo, etc.)
+├── src/
+│   ├── components/   # Reusable UI components (Navbar, Footer, TicketList, etc.)
+│   ├── context/      # React context providers (e.g., AuthContext)
+│   ├── mocks/        # Mock data for tickets, users, etc.
+│   ├── pages/        # Page components (Home, About, Contact, Dashboard, Login, etc.)
+│   ├── __tests__/    # Unit and integration tests
+│   ├── types/        # TypeScript type definitions (Ticket, User, etc.)
+│   └── main.tsx      # App entry point
+├── vercel.json       # Vercel config for SPA routing
+├── package.json      # Project dependencies and scripts
+├── tsconfig*.json    # TypeScript configuration
+└── README.md         # Project documentation
+```
+
+## Main URLs & What They Serve
+
+- `/`              — Home page: Product intro, features, and call to action
+- `/about`         — About page: Team, story, and mission
+- `/contact`       — Contact page: Contact form and company info
+- `/login`         — Admin login (only @solsphere.ai emails allowed)
+- `/dashboard`     — Support Ticket Dashboard (admin only): View, filter, and manage tickets
+
+## Code Overview
+- **components/**: Navbar, Footer, TicketList, and other UI building blocks
+- **context/**: Authentication logic and provider
+- **mocks/**: Mock ticket/user data for development/testing
+- **pages/**: Each route/page in the app
+- **__tests__/**: Vitest + Testing Library tests for core features
+- **types/**: TypeScript interfaces for data models
+
+## Running Locally
+```sh
+npm install
+npm run dev
+```
+
+## Deployment
+- Deployed on Vercel. SPA routing is handled via `vercel.json`.
 
 ## 🚀 Features
 
@@ -18,8 +62,8 @@ A modern, responsive support ticket management dashboard for customer support te
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/jaiyankargupta/solsphere_Assignment.git
-   cd solsphere_Assignment
+   git clone https://github.com/jaiyankargupta/solsphere.git
+   cd solsphere
    ```
 2. **Install dependencies:**
    ```sh
