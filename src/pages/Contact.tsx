@@ -39,7 +39,7 @@ export default function Contact() {
                 <Grid xs={12} md={6}>
                   <TextField label="Your Role*" fullWidth variant="outlined" margin="dense" />
                 </Grid>
-                <Grid xs={4}>
+                <Grid xs={6.2}>
                   <TextField 
                     label="Message*" 
                     fullWidth 

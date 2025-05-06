@@ -74,7 +74,7 @@ export const Navbar = () => {
         </ListItem>
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
           {solutions.map((sol) => (
-            <MenuItem key={sol.label} component={RouterLink} to={sol.to} onClick={handleClose}>{sol.label}</MenuItem>
+            <MenuItem key={sol.label} component={RouterLink} to={sol.to} onClick={handleClose} sx={{ fontSize: { xs: 13, sm: 14, md: 15 } }}>{sol.label}</MenuItem>
           ))}
         </Menu>
       </List>
@@ -116,25 +116,25 @@ export const Navbar = () => {
           {!isMobile && (
             <>
               {menuItems.map((item) => (
-                <Button key={item.label} component={RouterLink} to={item.to} sx={{ color: '#222', fontWeight: 500, mx: 1 }}>
+                <Button key={item.label} component={RouterLink} to={item.to} sx={{ color: '#222', fontWeight: 500, mx: 1, fontSize: { xs: 13, sm: 14, md: 15 } }}>
                   {item.label}
                 </Button>
               ))}
               {isAdmin && (
-                <Button component={RouterLink} to="/dashboard" sx={{ color: '#222', fontWeight: 500, mx: 1 }}>
+                <Button component={RouterLink} to="/dashboard" sx={{ color: '#222', fontWeight: 500, mx: 1, fontSize: { xs: 13, sm: 14, md: 15 } }}>
                   Support Ticket Dashboard
                 </Button>
               )}
               <Button
                 endIcon={<ExpandMoreIcon />}
-                sx={{ color: '#222', fontWeight: 500, mx: 1 }}
+                sx={{ color: '#222', fontWeight: 500, mx: 1, fontSize: { xs: 13, sm: 14, md: 15 } }}
                 onClick={handleMenu}
               >
                 Solutions
               </Button>
               <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 {solutions.map((sol) => (
-                  <MenuItem key={sol.label} component={RouterLink} to={sol.to} onClick={handleClose}>{sol.label}</MenuItem>
+                  <MenuItem key={sol.label} component={RouterLink} to={sol.to} onClick={handleClose} sx={{ fontSize: { xs: 13, sm: 14, md: 15 } }}>{sol.label}</MenuItem>
                 ))}
               </Menu>
             </>
@@ -147,7 +147,7 @@ export const Navbar = () => {
                 variant="contained"
                 component={RouterLink}
                 to="/contact"
-                sx={{ borderRadius: 2, background: '#000', color: '#fff', px: 3, boxShadow: 'none', textTransform: 'none', fontWeight: 500 }}
+                sx={{ borderRadius: 2, background: '#000', color: '#fff', px: 3, boxShadow: 'none', textTransform: 'none', fontWeight: 500, fontSize: { xs: 13, sm: 14 } }}
               >
                 Reach out to Us
               </Button>
@@ -157,7 +157,7 @@ export const Navbar = () => {
                 variant="contained"
                 component={RouterLink}
                 to="/login"
-                sx={{ borderRadius: 2, background: '#1976d2', color: '#fff', px: 3, boxShadow: 'none', textTransform: 'none', fontWeight: 500 }}
+                sx={{ borderRadius: 2, background: '#1976d2', color: '#fff', px: 3, boxShadow: 'none', textTransform: 'none', fontWeight: 500, fontSize: { xs: 13, sm: 14 } }}
               >
                 Login
               </Button>
@@ -174,7 +174,7 @@ export const Navbar = () => {
                     <Typography fontWeight={700}>{user.email}</Typography>
                     <Typography fontSize={13} color="text.secondary">Admin</Typography>
                   </Box>
-                  <MenuItem onClick={() => { handleProfileClose(); navigate('/logout'); }}>Logout</MenuItem>
+                  <MenuItem onClick={() => { handleProfileClose(); navigate('/logout'); }} sx={{ fontSize: { xs: 13, sm: 14, md: 15 } }}>Logout</MenuItem>
                 </Menu>
               </>
             )}
